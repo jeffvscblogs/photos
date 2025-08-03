@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | Photography Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0a;
+            color: #f0f0f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        
+        /* Header Styles */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem 0;
+            background: rgba(0, 0, 0, 0);
+            z-index: 1000;
+            transition: background 0.4s ease;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-link {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: #d4af37;
+        }
+        
+        .nav-link.active {
+            color: #d4af37;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #d4af37;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .hero-image {
+            flex: 1;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s ease 0.2s forwards;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .hero-image:hover img {
+            transform: scale(1.03);
+        }
+        
+        .hero-text {
+            flex: 1;
+            transform: translateY(50px);
+            opacity: 0;
+            animation: slideUp 1s ease 0.4s forwards;
+        }
+        
+        @keyframes slideUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #d4af37;
+            margin-bottom: 2rem;
+            letter-spacing: 1px;
+        }
+        
+        .hero-description {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+        }
+        
+        .signature {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-top: 2rem;
+            color: #d4af37;
+        }
+        
+        /* About Content */
+        .about-section {
+            padding: 8rem 2rem;
+            background: #111;
+        }
+        
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 4rem;
+        }
+        
+        .about-card {
+            background: rgba(20, 20, 20, 0.8);
+            padding: 3rem;
+            border-radius: 8px;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #d4af37;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .card-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #d4af37;
+        }
+        
+        .card-content {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .skills-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .skills-list li {
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .skills-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #d4af37;
+        }
+        
+        /* Journey Section */
+        .journey-section {
+            padding: 8rem 2rem;
+            background: #0a0a0a;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 5rem;
+            color: #f0f0f0;
+        }
+        
+        .journey-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .journey-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: #d4af37;
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 2rem;
+            padding-left: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .timeline-item:nth-child(even) {
+            margin-left: auto;
+            padding-left: 2rem;
+            padding-right: 4rem;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 2rem;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #d4af37;
+            z-index: 2;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+        
+        .timeline-year {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            color: #d4af37;
+            margin-bottom: 0.5rem;
+        }
+        
+        .timeline-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            padding: 8rem 2rem;
+            background: #111;
+            text-align: center;
+        }
+        
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-description {
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .social-link {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(212, 175, 55, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #d4af37;
+            font-size: 1.5rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: #d4af37;
+            color: #0a0a0a;
+            transform: translateY(-5px);
+        }
+        
+        .contact-btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            border: 2px solid #d4af37;
+            color: #d4af37;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+            letter-spacing: 1px;
+        }
+        
+        .contact-btn:hover {
+            background: #d4af37;
+            color: #0a0a0a;
+            transform: translateY(-3px);
+        }
+        
+        /* Footer */
+        .footer {
+            padding: 3rem 2rem;
+            background: #0a0a0a;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .footer-text {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding: 2rem;
+                padding-left: 3rem;
+            }
+            
+            .timeline-item:nth-child(even) {
+                padding-right: 3rem;
+            }
+            
+            .journey-container::before {
+                left: 30px;
+            }
+            
+            .timeline-item:nth-child(odd)::before {
+                left: 20px;
+                right: auto;
+            }
+            
+            .timeline-item:nth-child(even)::before {
+                left: 20px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .nav-links {
+                gap: 1.5rem;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <nav class="nav">
+                <h1 class="logo">LATEST STORIES</h1>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">PHOTOS</a>
+                    <a href="stories.html" class="nav-link">STORIES</a>
+                    <a href="about.html" class="nav-link active">ABOUT</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Creator Portrait">
+            </div>
+            <div class="hero-text">
+                <h1 class="hero-title">Alex Morgan</h1>
+                <p class="hero-subtitle">Visual Storyteller & Landscape Photographer</p>
+                <p class="hero-description">
+                    I capture moments that tell stories, reveal hidden beauty, and evoke emotion. 
+                    With over a decade of experience exploring the world through my lens, I've developed 
+                    a unique perspective that blends artistic vision with technical precision.
+                </p>
+                <p class="hero-description">
+                    My work has been featured in National Geographic, The New York Times, and exhibited 
+                    in galleries across Europe and North America. I believe photography is more than 
+                    just images—it's a way to connect with the world and share its wonders.
+                </p>
+                <div class="signature">Alex Morgan</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section">
+        <div class="about-container">
+            <div class="about-card">
+                <h2 class="card-title">My Philosophy</h2>
+                <p class="card-content">
+                    Photography is the art of observation. It's about finding something interesting in an ordinary place. 
+                    I've found it has little to do with the things you see and everything to do with the way you see them.
+                </p>
+                <p class="card-content">
+                    My approach combines patience, technical skill, and a deep respect for natural light. 
+                    I strive to create images that are both visually striking and emotionally resonant, 
+                    capturing the essence of a moment in time.
+                </p>
+            </div>
+            
+            <div class="about-card">
+                <h2 class="card-title">Skills & Expertise</h2>
+                <p class="card-content">
+                    With extensive experience across multiple photographic disciplines, I specialize in:
+                </p>
+                <ul class="skills-list">
+                    <li>Landscape Photography</li>
+                    <li>Wildlife Documentation</li>
+                    <li>Travel Storytelling</li>
+                    <li>Environmental Portraiture</li>
+                    <li>Night Sky Photography</li>
+                    <li>Drone Aerial Imaging</li>
+                    <li>Photojournalism</li>
+                    <li>Post-Production Editing</li>
+                </ul>
+            </div>
+            
+            <div class="about-card">
+                <h2 class="card-title">Publications & Exhibitions</h2>
+                <p class="card-content">
+                    My work has been recognized internationally through prestigious publications and exhibitions:
+                </p>
+                <ul class="skills-list">
+                    <li>National Geographic (2020, 2022)</li>
+                    <li>Time Magazine (2019)</li>
+                    <li>The New York Times (2018, 2021)</li>
+                    <li>Smithsonian Magazine (2020)</li>
+                    <li>Tate Modern Exhibition (London, 2019)</li>
+                    <li>MoMA Exhibition (New York, 2021)</li>
+                    <li>Photo London (2022)</li>
+                    <li>Rencontres d'Arles (2023)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Section -->
+    <section class="journey-section">
+        <h2 class="section-title">My Journey</h2>
+        <div class="journey-container">
+            <div class="timeline-item">
+                <div class="timeline-year">2010</div>
+                <h3 class="timeline-title">The Beginning</h3>
+                <p class="card-content">
+                    Purchased my first DSLR and began capturing landscapes in my hometown. 
+                    Started sharing photos on photography forums.
+                </p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2013</div>
+                <h3 class="timeline-title">First Exhibition</h3>
+                <p class="card-content">
+                    Featured in a local gallery exhibition. Sold my first print and decided to pursue photography professionally.
+                </p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2016</div>
+                <h3 class="timeline-title">National Recognition</h3>
+                <p class="card-content">
+                    Won the National Landscape Photographer of the Year award. 
+                    Began contributing to outdoor and travel magazines.
+                </p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2019</div>
+                <h3 class="timeline-title">International Debut</h3>
+                <p class="card-content">
+                    First international exhibition at Tate Modern, London. 
+                    Published in National Geographic for the first time.
+                </p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">2022</div>
+                <h3 class="timeline-title">Wildlife Conservation</h3>
+                <p class="card-content">
+                    Partnered with WWF for a year-long project documenting endangered species. 
+                    Resulting book became a bestseller.
+                </p>
+            </div>
+            
+            <div class="timeline-item">
+                <div class="timeline-year">Present</div>
+                <h3 class="timeline-title">Current Projects</h3>
+                <p class="card-content">
+                    Working on a multi-year project documenting climate change impacts on coastal communities. 
+                    Teaching masterclasses worldwide.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="contact-container">
+            <h2 class="contact-title">Get In Touch</h2>
+            <p class="contact-description">
+                Interested in collaborations, print purchases, or workshop opportunities? 
+                I'd love to hear from you.
+            </p>
+            
+            <div class="social-links">
+                <a href="#" class="social-link">
+                    <i>IG</i>
+                </a>
+                <a href="#" class="social-link">
+                    <i>TW</i>
+                </a>
+                <a href="#" class="social-link">
+                    <i>FB</i>
+                </a>
+                <a href="#" class="social-link">
+                    <i>IN</i>
+                </a>
+            </div>
+            
+            <a href="mailto:alex@photography.com" class="contact-btn">CONTACT ME</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p class="footer-text">© 2023 Alex Morgan Photography. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.querySelector('.header');
+        let lastScrollY = window.scrollY;
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            // Header background opacity based on scroll
+            const opacity = Math.min(currentScrollY / 200, 0.95);
+            header.style.background = `rgba(0, 0, 0, ${opacity})`;
+            
+            lastScrollY = currentScrollY;
+        });
+        
+        // Animation for timeline items
+        const timelineItems = document.querySelectorAll('.timeline-item');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+        
+        timelineItems.forEach(item => {
+            item.style.opacity = 0;
+            item.style.transform = 'translateY(30px)';
+            item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(item);
+        });
+    </script>
+</body>
+</html>

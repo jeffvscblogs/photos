@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stories | Photography</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <nav class="nav">
+                <h1 class="logo">The Way I See It</h1>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">PHOTOS</a>
+                    <a href="stories.html" class="nav-link active">STORIES</a>
+                    <a href="about.html" class="nav-link">ABOUT</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Stories Hero Section -->
+    <section class="stories-hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">LATEST STORIES</h2>
+                <p class="hero-subtitle">Step into a gallery of stories where every picture tells more than one tale.</p>
+                <div class="hero-divider"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stories Grid Section -->
+    <section class="stories-section">
+        <div class="container">
+            <div class="stories-layout">
+                <!-- Today's Picks Sidebar -->
+                <aside class="sidebar">
+                    <!--<h3 class="sidebar-title"> TODAY'S PICKS</h3> -->
+                    <div class="sidebar-stories" id="sidebarStories">
+                        <!-- Sidebar stories will be populated by JavaScript -->
+                    </div>
+                </aside>
+
+                <!-- Featured Story -->
+                <main class="featured-story" id="featuredStory">
+                    <!-- Featured story will be populated by JavaScript -->
+                </main>
+            </div>
+
+            <!-- All Stories Grid -->
+            <div class="all-stories">
+                <h3 class="section-title">coming soon..</h3>
+                <div class="stories-grid" id="storiesGrid">
+                    <!-- Stories grid will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Detail Modal -->
+    <div class="story-modal" id="storyModal">
+        <div class="story-modal-overlay" id="storyModalOverlay">
+            <button class="story-modal-close" id="storyModalClose">&times;</button>
+            <div class="story-modal-content" id="storyModalContent">
+                <!-- Story content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script src="stories.js"></script>
+</body>
+</html>
