@@ -2,26 +2,31 @@
 class StoriesLibrary {
     constructor() {
         this.stories = [
-            /*{
+            {
                 id: 1,
-                category: 'PHOTOGRAPHY',
-                title: 'The joyful, passionate world of Marilyn Monroe\'s superfans',
-                excerpt: 'Decades after her death, Marilyn Monroe continues to captivate fans around the world with her timeless beauty and tragic story.',
-                image: 'https://images.pexels.com/photos/1036623/pexels-photo-1036623.jpeg?auto=compress&cs=tinysrgb&w=800',
+                category: 'WILDLIFE',
+                title: 'The Watcher of the Rain',
+                excerpt: 'A lone bird in the monsoon becomes more than just a subject — it becomes a symbol of presence, peace, and patience.',
+                image: 'https://i.ibb.co/X6qThPX/IMG-0861.jpg?auto=compress&cs=tinysrgb&w=800',
                 content: `
-                    <p>Ancient Greeks noticed that Sirius—which they dubbed the "dog star" as it is the brightest star in the constellation Canis Major—appears to rise alongside the sun in late July. They believed the combined power of the stars is what made this the hottest time of year.</p>
-                    
-                    <p>These punishingly hot summer days get their name from an ancient belief about the brightest star in our night sky. Here's the story behind the dog days of summer.</p>
-                    
-                    <p>The term "dog days" refers to the hottest, most sultry days of summer. In the Northern Hemisphere, they usually fall between early July and early September. In many European cultures, people believed this period brought bad luck.</p>
-                    
-                    <p>The ancient Greeks and Romans noticed that the brightest star in the night sky, Sirius, would rise just before the sun during the hottest part of summer. Sirius is part of the constellation Canis Major (the Greater Dog), which is why it's called the "Dog Star."</p>
+                    <p>It was just another rainy day in the countryside — the kind where the sky forgets to stop crying, and the earth welcomes every drop like a long-lost friend. The fields turned darker,           the leaves shimmered with water, and the scent of wet soil floated quietly through the air.</p>
+
+                    <p>And there it was — a lone bird perched silently, halfway between the sky and the earth. Not fluttering. Not flying. Just watching.</p>
+
+                    <p>There was something hypnotic about it. The way it sat, feathers gently puffed, not bothered by the storm. It wasn’t looking for food. It wasn’t scared. It was simply present — existing             in that moment with an elegance that felt almost human.</p>
+
+                    <p>We often look at rain as something to hide from. Something inconvenient. But this bird — the silent <em>Watcher of the Rain</em> — showed something else. It embraced the grey, the          quiet, and the cold. It stared into the storm like it was listening to a story only the sky could tell.</p>
+
+                    <p>And maybe that’s what we need to learn. That not every moment has to be loud. That sometimes, the greatest strength lies in being still. In watching. In feeling.</p>
+
+                    <p>In a world constantly moving, rushing, changing — sometimes the most beautiful thing you can do is pause and be like the watcher: <strong>still, grounded, and unafraid of the storm.</          strong></p>
                 `,
-                author: 'National Geographic Staff',
-                date: 'July 15, 2024',
-                readTime: '5 min read',
+                author: 'Juman Deep Bharati',
+                date: 'August 6, 2025',
+                readTime: '3 min read',
                 featured: true
             },
+
             {
                 id: 2,
                 category: 'SCIENCE',
@@ -78,7 +83,7 @@ class StoriesLibrary {
                 readTime: '3 min read',
                 featured: false
             },
-            {
+            /*{
                 id: 5,
                 category: 'TRAVEL',
                 title: 'Hidden waterfalls of the Pacific Northwest',
@@ -212,10 +217,12 @@ class StoriesLibrary {
                 <div class="story-detail-header">
                     <img src="${story.image}" alt="${story.title}" class="story-detail-image">
                     <div class="story-detail-caption">
-                        Ancient Greeks noticed that Sirius—which they dubbed the "dog star" as it is the brightest star in the constellation Canis Major—appears to rise alongside the sun in late July. They believed the combined power of the stars is what made this the hottest time of year.
+                        The Common Myna often remains still during rain, puffing its feathers to stay warm.
+T                       his calm posture helps conserve energy while rain slides off its semi-waterproof coat.
+                        In moments like these, nature reveals survival not in movement, but in quiet endurance.
                     </div>
                     <div class="story-detail-credit">
-                        PHOTOGRAPH BY ANN RONAN PICTURES, PRINT COLLECTOR/GETTY
+                        PHOTOGRAPH BY JUMAN'S FILMS, 
                     </div>
                     <div class="story-detail-tags">
                         <span class="story-tag">${story.category.split(' ')[0]}</span>
